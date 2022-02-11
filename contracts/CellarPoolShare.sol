@@ -694,7 +694,7 @@ contract CellarPoolShare is ICellarPoolShare, BlockLock {
         address sender,
         address recipient,
         uint256 amount
-    ) internal {
+    ) internal lock(recipient) {
         if (sender == address(0)) revert TransferFromZeroAddress();
         if (recipient == address(0)) revert TransferToZeroAddress();
 

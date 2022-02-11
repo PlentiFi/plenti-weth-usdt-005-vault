@@ -1213,12 +1213,10 @@ contract BlockLock {
         lastLockedBlock[lockedAddress] = block.number + BLOCK_LOCK_COUNT;
         _;
     }
+
+    modifier lock(address lockedAddress) {
+        lastLockedBlock[lockedAddress] = block.number + BLOCK_LOCK_COUNT;
+        _;
+    }
 }
 
-/// @notice AggregatorV3Interface from Chainlink token price oracle
-interface AggregatorV3Interface {
-    /**
-     * @dev get token price from chainlink price oracle
-     */
-    function latestAnswer() external view returns(int256);
-}

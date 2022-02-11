@@ -9,7 +9,7 @@ def CellarPoolShareContract(USDC, WETH, USDT):
     symbol = "CPS"
     token0 = WETH
     token1 = USDT
-    cellarTickInfo = [[0, -192520, -199360, 1]]
+    cellarTickInfo = [[0, -185910, -219390, 1]]
     return CellarPoolShare.deploy(name, symbol, token0, token1, 500, cellarTickInfo, {'from':accounts[1]})
 
 @pytest.fixture(scope="session")
